@@ -48,8 +48,8 @@ public class Reader {
                     sendResponse("необходимо пересоедениться "+socket,writer);
                     break;
                 }
-                if(message.contains("name")) {                                                          //переименование
-                    String newUsername = message.substring(4,message.length());
+                if(message.contains("/name")) {                                                          //переименование
+                    String newUsername = message.substring(5,message.length());
                     sendResponse("Вы сменили имя на!  "+newUsername,writer);
                     System.out.printf(" Пользователь %s теперь известен как %s %n",username,newUsername);
                     username=newUsername;
