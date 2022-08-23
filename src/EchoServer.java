@@ -1,6 +1,7 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -25,6 +26,8 @@ public class EchoServer {
                 Reader reader = new Reader();
                 Socket clientSocket = server.accept();
                 pool.submit(() -> reader.handle(clientSocket));
+
+
             }
         }catch (IOException e){
             System.out.printf("Вероятнее всего порт %s занят %n. ",port);
